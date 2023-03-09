@@ -340,57 +340,57 @@ else {
 }
 
 // 5.2 CASE 
-let numbercase = 2;
-let numberText = "valor desconocido";
+// let numbercase = 2;
+// let numberText = "valor desconocido";
 
-switch (numbercase) {
-  case 1:
-    numberText="Numero 1"
-    break;
-  case 2:
-    numberText="Numero 2"
-    break;
-  case 3:
-    numberText="Numero 3"
-    break
-  case 4 :
-    numberText="NUmero 4"  
+// switch (numbercase) {
+//   case 1:
+//     numberText="Numero 1"
+//     break;
+//   case 2:
+//     numberText="Numero 2"
+//     break;
+//   case 3:
+//     numberText="Numero 3"
+//     break
+//   case 4 :
+//     numberText="NUmero 4"  
     
-    break;
+//     break;
 
-  default:
-    numberText="ingrese un valor de 1 a 4"
-    break;
+//   default:
+//     numberText="ingrese un valor de 1 a 4"
+//     break;
     
-}
-console.log(numberText);
-// 5.3 CICLOS 
-//5.3.1 WHILE 
-let contador = 0;
+// }
+// console.log(numberText);
+// // 5.3 CICLOS 
+// //5.3.1 WHILE 
+// let contador = 0;
 
-while (contador<3){
-  console.log(contador);
-  contador++;
-}
-console.log("Fin del while");
-//5.3.2 DO WHILE
-let contador1=4;
-do{
-  console.log(contador1);
-  contador1++;
-  console.log(contador1);
-} while (contador1 <3);
-console.log("Fin de do while");
-//5.3.3 FOR
-for(let contador3= 1;contador3<3;contador3++){
-  console.log(contador);
-}
-console.log("Fin del for");
-//5.3.4 BREAK
+// while (contador<3){
+//   console.log(contador);
+//   contador++;
+// }
+// console.log("Fin del while");
+// //5.3.2 DO WHILE
+// let contador1=4;
+// do{
+//   console.log(contador1);
+//   contador1++;
+//   console.log(contador1);
+// } while (contador1 <3);
+// console.log("Fin de do while");
+// //5.3.3 FOR
+// for(let contador3= 1;contador3<3;contador3++){
+//   console.log(contador);
+// }
+// console.log("Fin del for");
+// //5.3.4 BREAK
 
-alert("hola")
-numberStudents=prompt("Digite un numero: ")
-alert(numberStudents)
+// alert("hola")
+// numberStudents=prompt("Digite un numero: ")
+// alert(numberStudents)
   /* ----------------------EJERCICIOS--------------------------- */
 
 
@@ -400,23 +400,108 @@ alert(numberStudents)
 /*Objetos en JS*/
 
 /*Variables*/
-
+// const mascota = "luna";
+const cliente = "Jairo";
+// const factura = 5000;
+const servicio = "peluqueria"
 /*6.1. Objetos literales*/
+const veterinaria ={
+  mascota : "luna",
+  cliente : "Jairo",
+  factura : 5000,
+  servicio : "Peluqeria"
+};
 
+const customer = {
+  name : "Juan",
+  addres : "Calle 20 # 8",
+  sale : {
+    year : 2020,
+    salesman : "Pedro",
+    month : "January"
+  },
+  age : 20,
+  phoneNumber : 31438254,
+  socailSecurity: {
+    id:123456789,
+    health: "colsalnitas",
+    company : "Sura"
+  }
+}
 /*6.2. Acceso a valores del objeto*/
 
 /*6.2.1 sintaxis de punto*/
 
+console.log(customer.socailSecurity.company);
+console.log(customer.sale.month);
 /*6.2.2 agregar propiedades del objeto*/
+veterinaria.foto="lunajpg";
+console.log(veterinaria);
 
 /*6.2.3 eliminar propiedades del objeto*/
-
+delete veterinaria.foto;
+console.log(veterinaria);
 /*6.3. Asignar valores de propiedad de objeto a variable - Object Destructuring*/
-
+const {factura} = veterinaria
+console.log(factura);
+let {mascota} = veterinaria
+console.log(mascota);
+mascota = 24;
+console.log(mascota);
 /*6.4. Objetos dentro de objetos*/
-
+const centroComercial={
+  piso1:{
+    entradas: 3,
+    seguridad: true,
+    cantidadBaños:2,
+      baños:{
+        hombres: true,
+        mujeres: true,
+        discapacitados: true,
+        mascotas: false,
+      },
+      cantidadLocales: 34,
+        localesDeZatos:{
+          local1:"Adidas",
+          local2:"Nike",
+          local3:"peopleplays",
+          local4:"Deportivo Carvajal"
+        },
+        localesDeRopa:{
+          local1:"Aeropostale",
+          local2:"koaj",
+          local3:"Arturo calle",
+          local4:"Travel"
+        },
+        plazaDeComidas:false  
+  },
+  piso2:{
+    entradas:0,
+    seguridad:true,
+    cantidadBaños:2,
+       baños:{
+        hombres: true,
+        mujeres: true,
+        discapacitados: false,
+        mascotas: true,
+      },
+    plazaDeComidas:true,
+      localesDeComida:20,
+        local1:"El Corral",
+        local2:"El Kakareo",
+        local3:"Frisby",
+        local4:"Subway"    
+  },
+    cantidadLocales:20,
+      localesDeELectrodomesticos:{
+        local1:"Kalley"
+      }
+};
 /*6.5. Destructuring de objetos anidados*/
-
+const {piso1:{entradas}}=centroComercial;
+console.log(entradas);
+const{piso1:{baños:{hombres}}}=centroComercial;
+console.log(hombres);
 /*6.6.metodos objetos*/
 
 /*6.6.1 congelar  .freeze*/
@@ -431,34 +516,85 @@ alert(numberStudents)
 
 /*9.--------ARRAYS--------- */
 /* -------------------------------------------------------------------------------------- */
+const buseta = {
+  conductor :"Pedro",
+  sillas : 20,
+  placa: "XLOC-928"
+};
 
 /* 9.  Recordando objetos */
   
   // 9.1  Creando arreglo
-  
+  const arreglo23=[1,2,3];
+  console.log(typeof(arreglo23));
+  const seguidores =[1,2,3,[100,200,300]];
+  console.log(seguidores);
+  let arreglo = new Array(1,2,9)
+  console.log(arreglo);
   //9.2 acceder a los elementos del arreglo
-  
+  console.log(seguidores[3][2]);
   //9.3 recorrer un array
-  
-  //9.4  agregar nuevos valores al final de un array 
-  
-  //9.5 agregar elemento al final sin conocer longitud del arreglo - Push
+  for (let i=0;i<seguidores.length;i++){
+    console.log(seguidores[i]);
+  };
+a=seguidores.length;
+console.log(a);
 
+  //9.4  agregar nuevos valores al final de un array 
+  seguidores[4]="valor";
+  console.log(seguidores);
+  //9.5 agregar elemento al final sin conocer longitud del arreglo - Push
+  seguidores.push="Sabado";
+  console.log(seguidores);
   //9.6 Agregando objetos a un arreglo
-  
+  const carritoCompras=[];
+  const producto1={
+    name:"Automovil",
+    precio:50000000,
+  };
+  const producto2={
+    nombre:"Camion",
+    precio:90000000,
+  }
+  const producto3={
+    nombre:"Bicicleta",
+    precio:1200000
+  }
+   const producto4={
+    nombre:"Anillo",
+    precio:1300000
+  }
+   const producto5={
+    nombre:"pc",
+    precio:12000000
+  }
+
+carritoCompras.push(producto1,producto2,producto3,producto4,producto5);
+console.log(carritoCompras);
   //9.7 Eliminar ultimo elemento del arreglo - pop()
-  
+  carritoCompras.pop()
+  console.log(carritoCompras);
   //9.8 Eliminar primer elemento del arreglo - shift()
 
+  carritoCompras.shift();
+  console.log(carritoCompras);
   /* carrito.shift();
   console.log(carrito); */
   
   //9.9 eliminar cualquier elemento/splice
-  
+  carritoCompras.splice(1,1)
+  console.log(carritoCompras);
   //10.  DESTRUCTURING - ARRAYS ...
-  
+  const weekDays=["Lunes,","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+
+  const[lunes1,...restodedias]=weekDays
+  console.log(restodedias);
+  const [lunes,martes, , , ,miercoles]=weekDays
+  console.log(lunes,martes,miercoles);
   //11.  Iterar un array con objetos como elementos
-  
+  for(let j =0; j<carritoCompras.length; j++){
+    console.log(`Los elementos son ${carritoCompras[j].nombre}--${carritoCompras[j].precio}`);
+  }
   //11.1 Iterar con FOR  
   
   //11.2 Iterar con ForEach 
