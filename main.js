@@ -596,24 +596,104 @@ console.log(carritoCompras);
     console.log(`Los elementos son ${carritoCompras[j].nombre}--${carritoCompras[j].precio}`);
   }
   //11.1 Iterar con FOR  
-  
-  //11.2 Iterar con ForEach 
+  const objeto1 = {
+    marca:"Asus",
+    precio:4000000
+  }
+  const objeto2 ={
+    marca:"HP",
+    precio:1000000
+  }
+  const virtualStore =[]
+  virtualStore.push(objeto1,objeto2);
+
  
+
+  //11.2 Iterar con ForEach 
+  virtualStore.forEach((arr) => {console.log(`Iterando con ForEach${arr.marca}-${arr.precio}`);
+    
+  });
   //11.3 Iterar con Map  
-  
+  virtualStore.map((arr) => {console.log(`Iterando con Map${arr.marca}-${arr.precio}`);
+    
+});
   //12. FUNCIONES */
   /* ------------------------------------------------------------------------------------------------- */
   
   /* 12.1 Function Declaration */
-  
+
+//Declaracion
+ function sumar(num1,num2) {
+    sumacion=num1+num2;
+    console.log(sumacion);
+ };
+//Llamado
+ sumar(1,9);
   /* 12.2 Function Expression */
+   
+const sumar2 = function(num1,num2) {
+    sumando = num1+num2;
+    console.log(sumando);
+  } 
+ sumar2(8,10);
   
   /* 12.3 comunicacion entre funciones */
-  
+  function cicloDeVidaDelSoftware(planificacion) {
+    console.log(`LA primera etapa del ciclo de vida es :${planificacion}`);
+    analisis("Holis");
+    
+  }
+  function analisis(analisis) {
+    console.log(`La segunda fase del ciclo de vida es: ${analisis}`);
+    diseño("Hola soy diseño");
+   
+  }
+  function diseño(diseño) {
+    console.log(`La tercera etapa del ciclo de vida es :${diseño}`);
+    desarrollo("Hola soy desarrollo")
+  }
+  function desarrollo(desarrollo) {
+    console.log(`La cuarta etapa del ciclo de vida es :${desarrollo}`);
+   
+  }
+  cicloDeVidaDelSoftware("La planificacion");
   /* 12.4 Agregar funciones a objetos - metodos de propiedad */
+
+const campus ={
+  study: function (book) {
+    console.log(`Los campers estan estudiando el libro de: ${book}`);
+  },
+  whrite : function (ensayo) {
+    console.log(`Los campers estan escribiendo un ensayo de : ${ensayo}`);
+  },
+  read: function(leyendo) {
+    console.log(`Los campers estan leyendo la documentacion de ${leyendo}`);
+  },
+  develop: function(desarrollando) {
+    console.log(`Los campers estan desarrolando un codigo en ${desarrollando} `);
+    
+  }
+}
+campus.develop("Python")
+campus.read("TypeScript")
+campus.whrite("JavaScript");
+campus.study("El principito");
+
+
+
   
   /* 12.5 Arrow functions */
-  
+  //Funcion Expression
+const verTv=function () {
+  console.log(`La Tv se disfruta en las tardes`);
+}
+verTv()
+//COnvirtiendo a arrow funtion
+  const mirarTv=(love)=>
+  console.log(`La tv se disfruta en las noches con ${love}`);
+  mirarTv("Loves")
+  let sumar3 = (a,b)=> a+b;
+ console.log(sumar3(5,4))
   /* const verTvs = () => {
     console.log(`la tvs se mira en las tardes`);
   }; */
